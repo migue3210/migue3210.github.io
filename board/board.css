@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;700&display=swap');
+
+body {
+    margin: 0;
+    background: #FEFBF6;
+}
+
+.container {
+    padding: 50x;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bingo-card {
+    width: 443px;
+    height: 511px;
+    border-radius: 20px;
+    background: #8CB9BD;
+}
+
+h2 {
+    margin: 16;
+    color: #000;
+    text-align: center;
+    font-family: "Red Hat Display";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    background: #ffffff;
+    margin: 8px;
+    text-align: center;
+    font-family: "Red Hat Display";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 5px;
+}
+
+.number:hover {
+    border-radius: 50px;
+    background-color: #FEFBF6;
+}
+
+.number-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 8px;
+}
