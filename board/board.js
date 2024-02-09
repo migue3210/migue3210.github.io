@@ -1,32 +1,26 @@
-class NumberElement extends HTMLElement {
-    constructor() {
-        super();
+// Función para generar números aleatorios sin repetir
+function generarNumerosAleatorios() {
+    const listaNumeros = [];
+
+    while (listaNumeros.length < 25) {
+        const numeroAleatorio = Math.floor(Math.random() * 50) + 1;
+        if (!listaNumeros.includes(numeroAleatorio)) {
+            listaNumeros.push(numeroAleatorio);
+        }
     }
 
-    connectedCallback() {
-        this.innerHTML = `
-        <style>
-        div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 58px;
-            height: 58px;
-            flex-shrink: 0;
-            background: #ffffff;
-            margin: 8px;
-            text-align: center;
-            font-family: "Red Hat Display";
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-            border-radius: 5px;
-        }
-        </style>
-        <div>1</div>
-      `;
-    }
+    return listaNumeros;
 }
 
-customElements.define('header-component', Header);
+// Obtener la lista de números aleatorios
+const numerosAleatorios = generarNumerosAleatorios();
+
+// Crear divs con la clase CSS repetida
+const contenedorDivs = document.getElementById('number-list'); // Asegúrate de tener un elemento con el id "contenedor-divs"
+
+numerosAleatorios.forEach((numero) => {
+    const nuevoDiv = document.createElement('div');
+    nuevoDiv.className = 'number';
+    nuevoDiv.textContent = `${numero}`;
+    contenedorDivs.appendChild(nuevoDiv);
+});
