@@ -1,26 +1,23 @@
-// Función para generar números aleatorios sin repetir
-function generarNumerosAleatorios() {
-    const listaNumeros = [];
+function randomNumber() {
+    const numList = [];
 
-    while (listaNumeros.length < 25) {
-        const numeroAleatorio = Math.floor(Math.random() * 50) + 1;
-        if (!listaNumeros.includes(numeroAleatorio)) {
-            listaNumeros.push(numeroAleatorio);
+    while (numList.length < 25) {
+        const randomNumber = Math.floor(Math.random() * 50) + 1;
+        if (!numList.includes(randomNumber)) {
+            numList.push(randomNumber);
         }
     }
 
-    return listaNumeros;
+    return numList;
 }
 
-// Obtener la lista de números aleatorios
-const numerosAleatorios = generarNumerosAleatorios();
+const numbers = randomNumber();
 
-// Crear divs con la clase CSS repetida
-const contenedorDivs = document.getElementById('number-list'); // Asegúrate de tener un elemento con el id "contenedor-divs"
+const container = document.getElementById('number-list');
 
-numerosAleatorios.forEach((numero) => {
-    const nuevoDiv = document.createElement('div');
-    nuevoDiv.className = 'number';
-    nuevoDiv.textContent = `${numero}`;
-    contenedorDivs.appendChild(nuevoDiv);
+numbers.forEach((number) => {
+    const div = document.createElement('div');
+    div.className = 'number';
+    div.textContent = `${number}`;
+    container.appendChild(div);
 });
