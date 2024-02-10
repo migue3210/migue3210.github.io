@@ -64,7 +64,18 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 8px;
+}
+
+.number-list-5 {
+    margin: 10px;
+}
+
+.number-list-4 {
+    padding: 40px;
+}
+
+.number-list-3 {
+    padding: 60px;
 }
 
 .bingo-call {
