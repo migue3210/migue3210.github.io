@@ -2,16 +2,25 @@ function generateSize() {
     return Math.floor(Math.random() * 3) + 3;
 }
 const size = generateSize();
-function randomNumber() {
+
+function randomNumber(variable) {
     const numList = [];
 
-    while (numList.length < size * size) {
-        const randomNumber = Math.floor(Math.random() * 50) + 1;
-        if (!numList.includes(randomNumber)) {
-            numList.push(randomNumber);
+    if (variable == "number") {
+        while (numList.length < size * size) {
+            const randomNumber = Math.floor(Math.random() * 50) + 1;
+            if (!numList.includes(randomNumber)) {
+                numList.push(randomNumber);
+            }
+        }
+    } else if (variable == "verify") {
+        while (numList.length < 25) {
+            const randomNumber = Math.floor(Math.random() * 50) + 1;
+            if (!numList.includes(randomNumber)) {
+                numList.push(randomNumber);
+            }
         }
     }
-
     return numList;
 }
 
@@ -25,8 +34,8 @@ if (size == 5) {
 
 
 
-const verifyNumber = randomNumber();
-const numbers = randomNumber();
+const verifyNumber = randomNumber("verify");
+const numbers = randomNumber("number");
 
 const container = document.getElementById('number-list');
 
@@ -41,9 +50,13 @@ numbers.forEach((number) => {
 
 let counter = 0
 number = document.getElementById("bingo-call-number");
+turn = document.getElementById("turns");
+turn.innerText = counter;
+number.innerText = 0;
+
 function bingoCall() {
-    console.log(verifyNumber);
     if (counter < verifyNumber.length) {
+        turn.innerText = counter + 1;
         number.innerText = verifyNumber[counter];
         if (numbers.includes(verifyNumber[counter])) {
             numberVerify = document.getElementById(`${numbers.indexOf(verifyNumber[counter])}`);
