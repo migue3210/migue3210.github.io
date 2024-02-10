@@ -10,12 +10,21 @@
 
 <body>
     <div class="container">
-        <div class="bingo-card">
-            <h2>Lourdes</h2>
-            <div id="number-list">
-                <number-element></number-element>
+        <div class="cards">
+            <div class="bingo-card">
+                <h2>Lourdes</h2>
+                <div id="number-list">
+                </div>
             </div>
         </div>
+
+        <div class="bingo-numbers">
+            <div class="bingo-call">
+                <h2 id="bingo-call-number"></h2>
+                <button id="verify" onclick=bingoCall()>Sacar número</button>
+            </div>
+        </div>
+
     </div>
     <script src="board.js"></script>
 </body>
