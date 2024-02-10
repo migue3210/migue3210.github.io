@@ -42,7 +42,8 @@ numbers.forEach((number) => {
 let counter = 0
 number = document.getElementById("bingo-call-number");
 function bingoCall() {
-    if (counter < 25) {
+    console.log(verifyNumber);
+    if (counter < verifyNumber.length) {
         number.innerText = verifyNumber[counter];
         if (numbers.includes(verifyNumber[counter])) {
             numberVerify = document.getElementById(`${numbers.indexOf(verifyNumber[counter])}`);
