@@ -87,6 +87,8 @@ a {
 .board-size {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 p {
@@ -99,7 +101,7 @@ p {
 }
 
 .circle-shape {
-    margin: 0px 5px;
+    margin: 5px 5px;
     color: #000;
     font-family: "Red Hat Display";
     font-size: 16px;
@@ -121,7 +123,7 @@ p {
 }
 
 .circle-shape-target {
-    margin: 0px 5px;
+    margin: 5px 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,4 +179,16 @@ p {
     line-height: normal;
     border: none;
     cursor: pointer;
+}
+
+@media (max-width: 580px) {
+
+    .player,
+    .board-configuration {
+        width: 70%;
+    }
+
+    .ready {
+        width: 80vw;
+    }
 }
