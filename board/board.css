@@ -219,18 +219,6 @@ select:focus {
         margin: 0px;
     }
 
-    .number-list-5 {
-        margin: 10px;
-    }
-
-    .number-list-4 {
-        padding: 40px;
-    }
-
-    .number-list-3 {
-        padding: 60px;
-    }
-
     .number {
         width: 40px;
         height: 40px;
@@ -239,5 +227,21 @@ select:focus {
     .bingo-card {
         width: 380px;
         height: 450px;
+    }
+}
+
+@media (max-width: 380px) {
+    .number {
+        width: 35px;
+        height: 35px;
+    }
+
+    .bingo-card {
+        width: 320px;
+        height: 400px;
+    }
+
+    h2 {
+        font-size: 20px !important;
     }
 }
