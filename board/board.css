@@ -60,7 +60,10 @@ h2 {
     background-color: #6AAA64;
 }
 
-#number-list {
+#number-list1,
+#number-list2,
+#number-list3,
+#number-list4 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

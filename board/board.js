@@ -28,26 +28,66 @@ function randomNumber(variable) {
 
 // resizes the board
 if (size == 5) {
-    document.getElementById('number-list').className = 'number-list-5';
+    document.getElementById('number-list1').className = 'number-list-5';
+    document.getElementById('number-list2').className = 'number-list-5';
+    document.getElementById('number-list3').className = 'number-list-5';
+    document.getElementById('number-list4').className = 'number-list-5';
 } else if (size == 4) {
-    document.getElementById('number-list').className = 'number-list-4';
+    document.getElementById('number-list1').className = 'number-list-4';
+    document.getElementById('number-list2').className = 'number-list-4';
+    document.getElementById('number-list3').className = 'number-list-4';
+    document.getElementById('number-list4').className = 'number-list-4';
 } else if (size == 3) {
-    document.getElementById('number-list').className = 'number-list-3';
+    document.getElementById('number-list1').className = 'number-list-3';
+    document.getElementById('number-list2').className = 'number-list-3';
+    document.getElementById('number-list3').className = 'number-list-3';
+    document.getElementById('number-list4').className = 'number-list-3';
 }
 
 
 
 const verifyNumber = randomNumber("verify");
-const numbers = randomNumber("number");
-const container = document.getElementById('number-list');
+const numbers1 = randomNumber("number");
+const numbers2 = randomNumber("number");
+const numbers3 = randomNumber("number");
+const numbers4 = randomNumber("number");
+const container1 = document.getElementById(`number-list1`);
+const container2 = document.getElementById(`number-list2`);
+const container3 = document.getElementById(`number-list3`);
+const container4 = document.getElementById(`number-list4`);
+
 
 // put the numbers of the list in the html and adds styling
-numbers.forEach((number) => {
+numbers1.forEach((number) => {
     const div = document.createElement('div');
     div.className = 'number';
-    div.id = `${numbers.indexOf(number)}`;
+    div.id = `${numbers1.indexOf(number)}`;
     div.textContent = `${number}`;
-    container.appendChild(div);
+    container1.appendChild(div);
+});
+
+numbers2.forEach((number) => {
+    const div = document.createElement('div');
+    div.className = 'number';
+    div.id = `${24 + numbers2.indexOf(number)}`;
+    div.textContent = `${number}`;
+    container2.appendChild(div);
+});
+
+numbers3.forEach((number) => {
+    const div = document.createElement('div');
+    div.className = 'number';
+    div.id = `${49 + numbers3.indexOf(number)}`;
+    div.textContent = `${number}`;
+    container3.appendChild(div);
+});
+
+numbers4.forEach((number) => {
+    const div = document.createElement('div');
+    div.className = 'number';
+    div.id = `${74 + numbers4.indexOf(number)}`;
+    div.textContent = `${number}`;
+    container4.appendChild(div);
 });
 
 // adds text into html
@@ -62,8 +102,20 @@ function bingoCall() {
     if (counter < verifyNumber.length) {
         turn.innerText = counter + 1;
         number.innerText = verifyNumber[counter];
-        if (numbers.includes(verifyNumber[counter])) {
-            numberVerify = document.getElementById(`${numbers.indexOf(verifyNumber[counter])}`);
+        if (numbers1.includes(verifyNumber[counter])) {
+            numberVerify = document.getElementById(`${numbers1.indexOf(verifyNumber[counter])}`);
+            numberVerify.className = 'number-validate number';
+        }
+        if (numbers2.includes(verifyNumber[counter])) {
+            numberVerify = document.getElementById(`${24 + numbers2.indexOf(verifyNumber[counter])}`);
+            numberVerify.className = 'number-validate number';
+        }
+        if (numbers3.includes(verifyNumber[counter])) {
+            numberVerify = document.getElementById(`${49 + numbers3.indexOf(verifyNumber[counter])}`);
+            numberVerify.className = 'number-validate number';
+        }
+        if (numbers4.includes(verifyNumber[counter])) {
+            numberVerify = document.getElementById(`${74 + numbers4.indexOf(verifyNumber[counter])}`);
             numberVerify.className = 'number-validate number';
         }
     }
