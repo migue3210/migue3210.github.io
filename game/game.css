@@ -77,3 +77,62 @@ h1 {
 a {
     text-decoration: none;
 }
+
+.board-configuration {
+    display: flex;
+    justify-content: space-between;
+    width: 448px;
+}
+
+.board-size {
+    display: flex;
+    align-items: center;
+}
+
+p {
+    color: #000;
+    font-family: "Red Hat Display";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.circle-shape {
+    margin: 0px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-family: "Red Hat Display";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 41px;
+    height: 41px;
+    border-radius: 50px;
+    background-color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+.random {
+    display: inline-flex;
+    padding: 0px 20px;
+    height: 41px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    background: #000;
+    color: #FFF;
+    text-align: center;
+    font-family: "Red Hat Display";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+    cursor: pointer;
+}
