@@ -87,15 +87,6 @@ h2 {
     justify-content: center;
 }
 
-#bingo-call-number {
-    color: #000;
-    font-family: "Red Hat Display";
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
 #verify {
     border-radius: 50px;
     background: #000;
@@ -121,10 +112,12 @@ h2 {
     align-items: center;
 }
 
+#bingo-call-number,
 #turns,
 .turns {
     margin: 0;
     color: #000;
+    padding: 0px 10px;
 
     font-family: "Red Hat Display";
     font-size: 50px;
@@ -135,4 +128,116 @@ h2 {
 
 .bingo-numbers {
     justify-content: space-around;
+}
+
+.display {
+    display: none;
+}
+
+.box {
+    margin: 20px auto 40px auto;
+    border: 1px solid #d9d9d9;
+    height: 30px;
+    overflow: hidden;
+    width: 230px;
+    position: relative;
+}
+
+select {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 250px;
+}
+
+select:focus {
+    outline: none;
+}
+
+.box::after {
+    content: "\025be";
+    display: table-cell;
+    padding-top: 7px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    background-color: #d9d9d9;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    pointer-events: none;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .bingo-numbers {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 35px !important;
+    }
+
+    #verify {
+        font-size: 15px;
+        padding: 5px 25px;
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 520px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .bingo-numbers {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 35px !important;
+    }
+
+    #verify {
+        font-size: 15px;
+        padding: 5px 25px;
+        margin: 0px;
+    }
+
+    .number-list-5 {
+        margin: 10px;
+    }
+
+    .number-list-4 {
+        padding: 40px;
+    }
+
+    .number-list-3 {
+        padding: 60px;
+    }
+
+    .number {
+        width: 40px;
+        height: 40px;
+    }
+
+    .bingo-card {
+        width: 380px;
+        height: 450px;
+    }
 }

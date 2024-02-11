@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="game.css">
-    <title>Gaming Board</title>
+    <title>¡A Jugar!</title>
 </head>
 
 <body>
@@ -19,13 +19,13 @@
         <div class="board-configuration">
             <p>Tablero</p>
             <div class="board-size">
-                <button id="3x3" class="circle-shape">3</button>
-                <button id="4x4" class="circle-shape">4</button>
-                <button id="5x5" class="circle-shape">5</button>
-                <button id="random-size" class="random">Aleatorio</button>
+                <button id="3x3" class="circle-shape click">3</button>
+                <button id="4x4" class="circle-shape click">4</button>
+                <button id="5x5" class="circle-shape click">5</button>
+                <button id="random-size" class="random click">Aleatorio</button>
             </div>
         </div>
-        <a href="/board/board.html"><input class="ready" type="button" value="Empezar"></a>
+        <a href="/board/board.html"><input onclick=SaveData() id="send" class="ready" type="button" value="Empezar"></a>
     </div>
 
     <script src="game.js"></script>

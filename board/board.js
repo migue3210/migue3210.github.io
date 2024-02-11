@@ -1,8 +1,16 @@
+let doctitle = document.title;
+
+window.addEventListener("blur", () => {
+    document.title = "Regresa 🤧";
+})
+
+window.addEventListener("focus", () => {
+    document.title = doctitle;
+})
+
 // gets or generates the board size
-function generateSize() {
-    return Math.floor(Math.random() * 3) + 3;
-}
-const size = generateSize();
+
+const size = localStorage.getItem("BoardSize");
 
 // creates a list of random numbers
 function randomNumber(variable) {
@@ -69,7 +77,7 @@ numbers1.forEach((number) => {
 numbers2.forEach((number) => {
     const div = document.createElement('div');
     div.className = 'number';
-    div.id = `${24 + numbers2.indexOf(number)}`;
+    div.id = `${25 + numbers2.indexOf(number)}`;
     div.textContent = `${number}`;
     container2.appendChild(div);
 });
@@ -77,7 +85,7 @@ numbers2.forEach((number) => {
 numbers3.forEach((number) => {
     const div = document.createElement('div');
     div.className = 'number';
-    div.id = `${49 + numbers3.indexOf(number)}`;
+    div.id = `${50 + numbers3.indexOf(number)}`;
     div.textContent = `${number}`;
     container3.appendChild(div);
 });
@@ -85,7 +93,7 @@ numbers3.forEach((number) => {
 numbers4.forEach((number) => {
     const div = document.createElement('div');
     div.className = 'number';
-    div.id = `${74 + numbers4.indexOf(number)}`;
+    div.id = `${75 + numbers4.indexOf(number)}`;
     div.textContent = `${number}`;
     container4.appendChild(div);
 });
@@ -107,15 +115,15 @@ function bingoCall() {
             numberVerify.className = 'number-validate number';
         }
         if (numbers2.includes(verifyNumber[counter])) {
-            numberVerify = document.getElementById(`${24 + numbers2.indexOf(verifyNumber[counter])}`);
+            numberVerify = document.getElementById(`${25 + numbers2.indexOf(verifyNumber[counter])}`);
             numberVerify.className = 'number-validate number';
         }
         if (numbers3.includes(verifyNumber[counter])) {
-            numberVerify = document.getElementById(`${49 + numbers3.indexOf(verifyNumber[counter])}`);
+            numberVerify = document.getElementById(`${50 + numbers3.indexOf(verifyNumber[counter])}`);
             numberVerify.className = 'number-validate number';
         }
         if (numbers4.includes(verifyNumber[counter])) {
-            numberVerify = document.getElementById(`${74 + numbers4.indexOf(verifyNumber[counter])}`);
+            numberVerify = document.getElementById(`${75 + numbers4.indexOf(verifyNumber[counter])}`);
             numberVerify.className = 'number-validate number';
         }
     }
@@ -123,6 +131,60 @@ function bingoCall() {
 }
 
 
+const option1 = document.getElementById('option1');
+const option2 = document.getElementById('option2');
+const option3 = document.getElementById('option3');
+const option4 = document.getElementById('option4');
+option1.innerText = localStorage.getItem('player1');
+option2.innerText = localStorage.getItem('player2');
+option3.innerText = localStorage.getItem('player3');
+option4.innerText = localStorage.getItem('player4');
+
+function display() {
+    var getSelectValue = document.getElementById("player-list").value;
+
+    if (getSelectValue == option1.innerText) {
+        document.getElementById('card1').style.display = "flex";
+        document.getElementById('card2').style.display = 'none';
+        document.getElementById('card3').style.display = 'none';
+        document.getElementById('card4').style.display = 'none';
+    } else if (getSelectValue == option2.innerText) {
+        document.getElementById('card2').style.display = 'flex';
+        document.getElementById('card1').style.display = 'none';
+        document.getElementById('card3').style.display = 'none';
+        document.getElementById('card4').style.display = 'none';
+    } else if (getSelectValue == option3.innerText) {
+        document.getElementById('card3').style.display = "flex";
+        document.getElementById('card1').style.display = 'none';
+        document.getElementById('card2').style.display = 'none';
+        document.getElementById('card4').style.display = 'none';
+    } else if (getSelectValue == option4.innerText) {
+        document.getElementById('card4').style.display = "flex";
+        document.getElementById('card1').style.display = 'none';
+        document.getElementById('card3').style.display = 'none';
+        document.getElementById('card2').style.display = 'none';
+    }
+
+}
 
 
 
+const player1 = document.getElementById('player1');
+player1.innerText = localStorage.getItem('player1');
+const player2 = document.getElementById('player2');
+player2.innerText = localStorage.getItem('player2');
+const player3 = document.getElementById('player3');
+player3.innerText = localStorage.getItem('player3');
+const player4 = document.getElementById('player4');
+player4.innerText = localStorage.getItem('player4');
+
+
+
+function getDiagonal() {
+    const n = 0;
+    for (let index = 0; index < array.length; 0) {
+        const element = array[index];
+
+    }
+
+}
