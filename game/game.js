@@ -29,7 +29,7 @@ document.querySelectorAll(".click").forEach(element => {
             randomSize.className = "random click";
             boardSize = 3;
             localStorage.setItem("BoardSize", boardSize);
-
+            stateHandle();
 
         } if (id == '4x4') {
             size3.className = 'circle-shape click';
@@ -38,7 +38,7 @@ document.querySelectorAll(".click").forEach(element => {
             randomSize.className = "random click";
             boardSize = 4;
             localStorage.setItem("BoardSize", boardSize);
-
+            stateHandle();
 
 
         } if (id == '5x5') {
@@ -48,7 +48,7 @@ document.querySelectorAll(".click").forEach(element => {
             randomSize.className = "random click";
             boardSize = 5;
             localStorage.setItem("BoardSize", boardSize);
-
+            stateHandle();
 
 
         } if ('random-size' == id) {
@@ -58,7 +58,7 @@ document.querySelectorAll(".click").forEach(element => {
             randomSize.className = "random-target click";
             boardSize = generateSize();
             localStorage.setItem("BoardSize", boardSize);
-
+            stateHandle();
 
         }
     });
@@ -81,8 +81,9 @@ if (input) {
 }
 
 function stateHandle() {
-    if ((input1.value && input2.value && input3.value && input4.value) === "" && boardSize === null) {
+    if (input1.value === "" || input2.value === "" || input3.value === "" || input4.value === "" || boardSize === null) {
         button.disabled = true;
+        button.className = 'button not-ready';
     } else {
         button.disabled = false;
         button.className = 'button ready';

@@ -87,6 +87,7 @@ h2 {
     justify-content: center;
 }
 
+#refresh,
 #verify {
     border-radius: 50px;
     background: #000;
@@ -190,6 +191,7 @@ select:focus {
         font-size: 35px !important;
     }
 
+    #refresh,
     #verify {
         font-size: 15px;
         padding: 5px 25px;
@@ -213,6 +215,7 @@ select:focus {
         font-size: 35px !important;
     }
 
+    #refresh,
     #verify {
         font-size: 15px;
         padding: 5px 25px;

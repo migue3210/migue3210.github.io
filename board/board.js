@@ -99,11 +99,13 @@ numbers4.forEach((number) => {
 });
 
 // adds text into html
-let counter = 0
+let counter = 0;
 number = document.getElementById("bingo-call-number");
 turn = document.getElementById("turns");
 turn.innerText = counter;
 number.innerText = 0;
+document.getElementById("refresh").style.display = "none";
+
 
 // changes color of the number if it is correct and adds to the counter
 function bingoCall() {
@@ -126,9 +128,23 @@ function bingoCall() {
             numberVerify = document.getElementById(`${75 + numbers4.indexOf(verifyNumber[counter])}`);
             numberVerify.className = 'number-validate number';
         }
+        if (counter === 24) {
+            let refresh = document.getElementById('refresh');
+            document.getElementById("verify").style.display = "none";
+            refresh.style.display = "flex";
+
+            refresh.addEventListener('click', _ => {
+                location.reload();
+            })
+
+        }
+
     }
     counter++;
 }
+console.log(counter);
+
+
 
 
 const option1 = document.getElementById('option1');
@@ -169,6 +185,7 @@ function display() {
 
 
 
+
 const player1 = document.getElementById('player1');
 const player2 = document.getElementById('player2');
 const player3 = document.getElementById('player3');
@@ -180,11 +197,130 @@ player3.innerText = localStorage.getItem('player3');
 player4.innerText = localStorage.getItem('player4');
 
 
-function getDiagonal() {
-    const n = 0;
-    for (let index = 0; index < array.length; 0) {
-        const element = array[index];
-
+function getLeftDiagonal(start, end, points) {
+    while (start <= end) {
+        start += (size + 1);
+        if (document.getElementById(start).className != 'number-validate number') {
+            break
+        } else {
+            points += 3;
+        }
     }
+}
+function getRightDiagonal(start, points) {
+    while (start <= size * size - 1) {
+        start += (size - 1);
+        if (document.getElementById(start).className != 'number-validate number') {
+            break
+        } else {
+            points += 3;
+        }
+    }
+}
 
+function getVerticalLine(start, points) {
+    while (start <= size * size) {
+        start += size;
+        if (document.getElementById(start).className != 'number-validate number') {
+            break
+        } else {
+            points += 1;
+        }
+    }
+}
+
+function getHorizontalLine(start, end, points) {
+    while (start <= (start + 4)) {
+        start += 1;
+        if (document.getElementById(start).className != 'number-validate number') {
+            break
+        } else {
+            points += 3;
+        }
+    }
+}
+function getFullCard(start, points) {
+    while (start <= (start + size * size - 1)) {
+        start += 1;
+        if (document.getElementById(start).className != 'number-validate number') {
+            break
+        } else {
+            points += 5;
+        }
+    }
+}
+
+
+function pointsFiveByFive() {
+    playerPoints1 = 0;
+    playerPoints2 = 0;
+    playerPoints3 = 0;
+    playerPoints4 = 0;
+    getLeftDiagonal(0, playerPoints1);
+    getRightDiagonal(4, playerPoints1);
+
+    getHorizontalLine(0, playerPoints1);
+    getHorizontalLine(5, playerPoints1);
+    getHorizontalLine(10, playerPoints1);
+    getHorizontalLine(15, playerPoints1);
+    getHorizontalLine(20, playerPoints1);
+
+    getVerticalLine(0, playerPoints1);
+    getVerticalLine(1, playerPoints1);
+    getVerticalLine(2, playerPoints1);
+    getVerticalLine(3, playerPoints1);
+    getVerticalLine(4, playerPoints1);
+
+    getFullCard(0, playerPoints1);
+
+    getLeftDiagonal(25, playerPoints2);
+    getRightDiagonal(29, playerPoints2);
+
+    getHorizontalLine(25, playerPoints2);
+    getHorizontalLine(30, playerPoints2);
+    getHorizontalLine(35, playerPoints2);
+    getHorizontalLine(40, playerPoints2);
+    getHorizontalLine(45, playerPoints2);
+
+    getVerticalLine(25, playerPoints2);
+    getVerticalLine(26, playerPoints2);
+    getVerticalLine(27, playerPoints2);
+    getVerticalLine(28, playerPoints2);
+    getVerticalLine(29, playerPoints2);
+
+    getFullCard(25, playerPoints2);
+
+    getLeftDiagonal(50, playerPoints3);
+    getRightDiagonal(54, playerPoints3);
+
+    getHorizontalLine(25, playerPoints2);
+    getHorizontalLine(30, playerPoints2);
+    getHorizontalLine(35, playerPoints2);
+    getHorizontalLine(40, playerPoints2);
+    getHorizontalLine(45, playerPoints2);
+
+    getVerticalLine(25, playerPoints2);
+    getVerticalLine(26, playerPoints2);
+    getVerticalLine(27, playerPoints2);
+    getVerticalLine(28, playerPoints2);
+    getVerticalLine(29, playerPoints2);
+
+    getFullCard(25, playerPoints2);
+
+    getLeftDiagonal(75, playerPoints4);
+    getRightDiagonal(79, playerPoints4);
+
+    getHorizontalLine(25, playerPoints2);
+    getHorizontalLine(30, playerPoints2);
+    getHorizontalLine(35, playerPoints2);
+    getHorizontalLine(40, playerPoints2);
+    getHorizontalLine(45, playerPoints2);
+
+    getVerticalLine(25, playerPoints2);
+    getVerticalLine(26, playerPoints2);
+    getVerticalLine(27, playerPoints2);
+    getVerticalLine(28, playerPoints2);
+    getVerticalLine(29, playerPoints2);
+
+    getFullCard(25, playerPoints2);
 }
