@@ -17,7 +17,8 @@ function generateSize() {
     return Math.floor(Math.random() * 3) + 3;
 }
 
-var boardSize;
+var boardSize = null;
+localStorage.setItem("BoardSize", boardSize)
 document.querySelectorAll(".click").forEach(element => {
     element.addEventListener("click", e => {
         const id = e.target.getAttribute("id");
@@ -64,22 +65,35 @@ document.querySelectorAll(".click").forEach(element => {
 });
 
 
+var input1 = document.getElementById("player1");
+var input2 = document.getElementById("player2");
+var input3 = document.getElementById("player3");
+var input4 = document.getElementById("player4");
 
-// function enable() {
-//     if (input1 === '' || input2 === '' || input3 === '' || input4 === '' || boardSize == null) {
-//         button.disabled = true;
-//     } else {
-//         button.disabled = false;
-//     }
-// }
+let button = document.querySelector(".button");
+let input = document.querySelector(".player");
+button.disabled = true;
+if (input) {
+    input1.addEventListener("change", stateHandle);
+    input2.addEventListener("change", stateHandle);
+    input3.addEventListener("change", stateHandle);
+    input4.addEventListener("change", stateHandle);
+}
 
+function stateHandle() {
+    if ((input1.value && input2.value && input3.value && input4.value) === "" && boardSize === null) {
+        button.disabled = true;
+    } else {
+        button.disabled = false;
+        button.className = 'button ready';
+    }
+}
 
 function SaveData() {
     var input1 = document.getElementById("player1").value;
     var input2 = document.getElementById("player2").value;
     var input3 = document.getElementById("player3").value;
     var input4 = document.getElementById("player4").value;
-    var button = document.getElementById("send");
     localStorage.setItem("player1", input1);
     localStorage.setItem("player2", input2);
     localStorage.setItem("player3", input3);
