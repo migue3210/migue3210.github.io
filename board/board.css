@@ -230,6 +230,14 @@ select:focus {
     }
 }
 
+.arrow-icon {
+    position: absolute;
+    margin: 50px;
+    cursor: pointer;
+    height: 30px;
+    width: auto;
+}
+
 @media (max-width: 380px) {
     .number {
         width: 35px;

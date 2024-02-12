@@ -89,6 +89,21 @@ function stateHandle() {
     }
 }
 
+function verificarInputsDistintos() {
+    const valores = [player1.value, player2.value, player3.value, player4.value];
+
+    const duplicados = new Set(valores).size !== valores.length;
+
+    if (duplicados) {
+        alert("¡Los textos deben ser distintos!");
+    } else {
+        SaveData();
+    }
+}
+
+const botonVerificar = document.getElementById("verificar");
+button.addEventListener("click", verificarInputsDistintos);
+
 function SaveData() {
     var input1 = document.getElementById("player1").value;
     var input2 = document.getElementById("player2").value;
@@ -98,6 +113,8 @@ function SaveData() {
     localStorage.setItem("player2", input2);
     localStorage.setItem("player3", input3);
     localStorage.setItem("player4", input4);
+    var anchor = document.getElementById('anchor');
+    anchor.href = '/board/board.html';
 }
 
 
