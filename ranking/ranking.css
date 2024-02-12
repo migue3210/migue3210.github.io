@@ -73,3 +73,20 @@ h1 {
     height: 30px;
     width: auto;
 }
+
+@media (max-width: 580px) {
+
+
+    .card {
+        width: 70%;
+    }
+
+    .ready,
+    .not-ready {
+        width: 80vw;
+    }
+
+    .arrow-icon {
+        margin: 20px !important;
+    }
+}
